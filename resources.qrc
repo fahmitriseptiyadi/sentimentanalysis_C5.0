@@ -1,0 +1,29 @@
+<RCC>
+  <qresource>
+    <file>asset/images/process.png</file>
+    <file>asset/images/menus_blue.png</file>
+    <file>asset/images/menus_white.png</file>
+    <file>asset/images/dashboard_blue.png</file>
+    <file>asset/images/dashboard_white.png</file>
+    <file>asset/images/decision-tree_blue.png</file>
+    <file>asset/images/decision-tree_white.png</file>
+    <file>asset/images/dataset_blue.png</file>
+    <file>asset/images/dataset_white.png</file>
+    <file>asset/images/nlp_blue.png</file>
+    <file>asset/images/nlp_white.png</file>
+    <file>asset/images/file_csv_format_type_icon.png</file>
+    <file>asset/images/fhmup.png</file>
+    <file>asset/images/fhmupp.png</file>
+    <file>asset/images/fhmup.png</file>
+    <file>asset/images/dashboard_white.png</file>
+    <file>asset/images/settinga_white.png</file>
+    <file>asset/images/settings_blue.png</file>
+    <file>asset/images/image.png</file>
+    <file>asset/images/turn-off_blue.png</file>
+    <file>asset/images/myProfilePhoto-removebg-preview.png</file>
+    <file>asset/images/turn-off_white.png</file>
+    <file>asset/images/profile.png</file>
+    <file>asset/images/profile_white.png</file>
+    <file>asset/images/search.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,12 @@
+berikut saya berikan contoh dictionary:
+    norm_dict = {
+    "bansos": "bantuan sosial",
+    "bpk": "bapak",
+    "ngurusin": "mengurus",
+    "prabowogibran": "prabowo gibran",
+    "sdh": "sudah",
+    "spt": "seperti",
+    "yg": "yang"
+}
+
+tambahkan dictionary dari tweet2 dibawah ini yang itu merupakan slang/typo/singkaan/dll menjadi Bahasa Indonesia yang baik dan jelas sesuai konteks kamus Bahasa Indonesia yang benar (jika sudah ada didalam dictionary tidak perlu ditambahkan lagi), jika ada duplikat maka hilangkan kemudian urutkan dict nya a-z:

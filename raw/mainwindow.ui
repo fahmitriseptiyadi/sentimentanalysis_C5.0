@@ -1,0 +1,1230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1198</width>
+    <height>818</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Sentiment Analysis</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources.qrc">
+    <normaloff>:/asset/images/fhmup.png</normaloff>:/asset/images/fhmup.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(240, 240, 240);
+</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>30</width>
+    <height>30</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="1">
+     <widget class="QWidget" name="iconname_widget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>140</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: rgb(197, 173, 237);
+	color:white;
+}
+
+QPushButton{
+	color: white;
+	text-align: left;
+	height: 40px;
+	border: none;
+	padding-left: 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+QPushButton:checked{	
+	background-color:#F0F0F0;
+	color:#8C9AFF;
+	font-weight:bold;	
+	
+}
+QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+	color: white; 
+}
+
+
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <property name="rightMargin">
+          <number>5</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources.qrc">:/asset/images/fhmupp.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Tahoma</family>
+             <pointsize>9</pointsize>
+             <weight>75</weight>
+             <italic>false</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+    color: black; /* Warna default teks */
+}
+
+QLabel:hover {
+    color: #6b80ff; /* Warna teks saat di-hover */
+}
+</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;ANALISIS&lt;br/&gt;SENTIMEN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <property name="indent">
+            <number>-1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="dashboard_2">
+           <property name="text">
+            <string>Dashboard</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/dashboard_white.png</normaloff>
+             <normalon>:/asset/images/dashboard_blue.png</normalon>:/asset/images/dashboard_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dataset_2">
+           <property name="text">
+            <string>Dataset</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/dataset_white.png</normaloff>
+             <normalon>:/asset/images/dataset_blue.png</normalon>:/asset/images/dataset_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pre_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Pre-Processing</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/nlp_white.png</normaloff>
+             <normalon>:/asset/images/nlp_blue.png</normalon>:/asset/images/nlp_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ml_2">
+           <property name="text">
+            <string>ML</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/decision-tree_white.png</normaloff>
+             <normalon>:/asset/images/decision-tree_blue.png</normalon>:/asset/images/decision-tree_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="settings_2">
+           <property name="text">
+            <string>Settings</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/settinga_white.png</normaloff>
+             <normalon>:/asset/images/settings_blue.png</normalon>:/asset/images/settinga_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>391</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logout_2">
+         <property name="text">
+          <string>Sign Out</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/asset/images/turn-off_white.png</normaloff>
+           <normalon>:/asset/images/turn-off_blue.png</normalon>:/asset/images/turn-off_white.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="icononly_widget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>100</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+background-color: rgb(197, 173, 237);
+}
+
+
+QPushButton{
+	color: white;
+	text-align:center;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+}
+
+
+QPushButton:checked{	
+	background-color:#F0F0F0;
+	color:#8C9AFF;
+	font-weight:bold;	
+	
+}
+
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>70</width>
+             <height>70</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="../resources.qrc">:/asset/images/fhmupp.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+         <property name="topMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="dashboard_1">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/dashboard_white.png</normaloff>
+             <normalon>:/asset/images/dashboard_blue.png</normalon>:/asset/images/dashboard_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>25</width>
+             <height>25</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="dataset_1">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/dataset_white.png</normaloff>
+             <normalon>:/asset/images/dataset_blue.png</normalon>:/asset/images/dataset_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pre_1">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/nlp_white.png</normaloff>
+             <normalon>:/asset/images/nlp_blue.png</normalon>:/asset/images/nlp_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ml_1">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/decision-tree_white.png</normaloff>
+             <normalon>:/asset/images/decision-tree_blue.png</normalon>:/asset/images/decision-tree_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="settings_1">
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/settinga_white.png</normaloff>
+             <normalon>:/asset/images/settings_blue.png</normalon>:/asset/images/settinga_white.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>391</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="logout_1">
+         <property name="styleSheet">
+          <string notr="true">QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="../resources.qrc">
+           <normaloff>:/asset/images/turn-off_white.png</normaloff>
+           <normalon>:/asset/images/turn-off_blue.png</normalon>:/asset/images/turn-off_white.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QWidget" name="mainmenu" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="header_widget" native="true">
+         <property name="styleSheet">
+          <string notr="true">QWidget{
+background-color: rgb(197, 173, 237);
+}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QPushButton" name="pushButton_13">
+            <property name="styleSheet">
+             <string notr="true">/* Style untuk QPushButton */
+QPushButton {
+    color: black; /* Ganti dengan warna teks yang diinginkan */
+    text-align: center;
+    height: 25px;
+    border: 1px solid #8C9AFF; /* Border dengan warna tertentu */
+    border-radius: 10px; /* Sudut yang melengkung */
+    background-color: rgb(197, 173, 237); /* Warna latar belakang default */
+    padding: 5px; /* Padding default */
+}
+
+/* Ketika tombol di-hover (mouse di atas tombol) */
+QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}
+
+/* Ketika tombol ditekan */
+QPushButton:pressed {
+    background-color: #8C9AFF; /* Warna latar belakang ketika tombol ditekan */
+    padding-top: 7px; /* Tambah padding di atas untuk efek 'masuk ke dalam' */
+    padding-left: 7px; /* Tambah padding di kiri untuk efek 'masuk ke dalam' */
+    border-style: inset; /* Ganti border style menjadi inset untuk efek 'masuk ke dalam' */
+}
+
+/* Ketika tombol dilepaskan (unclicked), kembali ke state normal */
+QPushButton:!pressed {
+    background-color: rgb(197, 173, 237); /* Warna latar belakang default */
+    padding-top: 5px; /* Kembali ke padding default */
+    padding-left: 5px; /* Kembali ke padding default */
+    border-style: outset; /* Border style normal */
+}
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/asset/images/menus_white.png</normaloff>
+              <normalon>:/asset/images/menus_blue.png</normalon>:/asset/images/menus_white.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout"/>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>870</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="profile_btn">
+            <property name="styleSheet">
+             <string notr="true">/* Style untuk QPushButton */
+QPushButton {
+    color: black; /* Ganti dengan warna teks yang diinginkan */
+    text-align: center;
+    height: 25px;
+    border: 1px solid #8C9AFF; /* Border dengan warna tertentu */
+    border-radius: 10px; /* Sudut yang melengkung */
+    background-color: rgb(197, 173, 237); /* Warna latar belakang default */
+    padding: 5px; /* Padding default */
+}
+
+/* Ketika tombol di-hover (mouse di atas tombol) */
+QPushButton:hover {
+    background-color: #8C9AFF; /* Warna latar belakang ketika mouse hover */
+}
+
+/* Ketika tombol ditekan */
+QPushButton:pressed {
+    background-color: #8C9AFF; /* Warna latar belakang ketika tombol ditekan */
+    padding-top: 7px; /* Tambah padding di atas untuk efek 'masuk ke dalam' */
+    padding-left: 7px; /* Tambah padding di kiri untuk efek 'masuk ke dalam' */
+    border-style: inset; /* Ganti border style menjadi inset untuk efek 'masuk ke dalam' */
+}
+
+/* Ketika tombol dilepaskan (unclicked), kembali ke state normal */
+QPushButton:!pressed {
+    background-color: rgb(197, 173, 237); /* Warna latar belakang default */
+    padding-top: 5px; /* Kembali ke padding default */
+    padding-left: 5px; /* Kembali ke padding default */
+    border-style: outset; /* Border style normal */
+}
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="../resources.qrc">
+              <normaloff>:/asset/images/myProfilePhoto-removebg-preview.png</normaloff>:/asset/images/myProfilePhoto-removebg-preview.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QStackedWidget" name="stackedWidget">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(240, 240, 240);</string>
+         </property>
+         <widget class="QWidget" name="dashboard_page"/>
+         <widget class="QWidget" name="dataset_page">
+          <widget class="QPushButton" name="opencsv_button">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>20</y>
+             <width>931</width>
+             <height>131</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    color: black; /* Warna teks */
+    text-align: center;
+    height: 25px;
+    border: 1px solid #8C9AFF; /* Border dengan warna tertentu */
+    border-radius: 10px; /* Sudut yang melengkung */
+    background-color: darkgray; /* Warna latar belakang abu-abu */
+    padding: 5px; /* Padding default */
+}
+
+QPushButton:hover {
+    background-color: gray; /* Warna latar belakang saat hover */
+}</string>
+           </property>
+           <property name="text">
+            <string>Open CSV.
+
+or drop csv. here</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../resources.qrc">
+             <normaloff>:/asset/images/file_csv_format_type_icon.png</normaloff>:/asset/images/file_csv_format_type_icon.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="datasetview_table">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>180</y>
+             <width>931</width>
+             <height>551</height>
+            </rect>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    padding: 5px;
+    gridline-color: black; /* Mengatur warna garis grid antar sel */
+    border: 1px solid black; /* Menambahkan border pada seluruh tabel */
+    color: black; /* Mengatur warna teks di dalam tabel */
+    background-color: white;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di bawah */
+    border-right: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di sisi kanan */
+	border-top: 3px solid rgba(0, 0, 0, 0.25); 
+    border-left: 3px solid rgba(0, 0, 0, 0.25); 
+}
+
+QHeaderView::section {
+    background-color: lightgray; /* Warna latar belakang header kolom */
+    border: 1px solid black; /* Border di sekitar header */
+    color: black; /* Warna teks di header kolom */
+}
+
+QHeaderView::section:first-of-type {
+    background-color: lightgray; /* Warna latar belakang header kolom pertama */
+    color: black; /* Warna teks di header kolom pertama */
+}
+</string>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="preprocessing_page">
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>0</y>
+             <width>131</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:black;</string>
+           </property>
+           <property name="text">
+            <string>Pre Batch-1</string>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="pre_table">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>40</y>
+             <width>931</width>
+             <height>271</height>
+            </rect>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    padding: 5px;
+    gridline-color: black; /* Mengatur warna garis grid antar sel */
+    border: 1px solid black; /* Menambahkan border pada seluruh tabel */
+    color: black; /* Mengatur warna teks di dalam tabel */
+    background-color: white;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di bawah */
+    border-right: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di sisi kanan */
+	border-top: 3px solid rgba(0, 0, 0, 0.25); 
+    border-left: 3px solid rgba(0, 0, 0, 0.25); 
+}
+
+QHeaderView::section {
+    background-color: lightgray; /* Warna latar belakang header kolom */
+    border: 1px solid black; /* Border di sekitar header */
+    color: black; /* Warna teks di header kolom */
+}
+
+QHeaderView::section:first-of-type {
+    background-color: lightgray; /* Warna latar belakang header kolom pertama */
+    color: black; /* Warna teks di header kolom pertama */
+}
+</string>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="pre_table2">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>350</y>
+             <width>931</width>
+             <height>271</height>
+            </rect>
+           </property>
+           <property name="acceptDrops">
+            <bool>true</bool>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableWidget {
+    padding: 5px;
+    gridline-color: black; /* Mengatur warna garis grid antar sel */
+    border: 1px solid black; /* Menambahkan border pada seluruh tabel */
+    color: black; /* Mengatur warna teks di dalam tabel */
+    background-color: white;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di bawah */
+    border-right: 3px solid rgba(0, 0, 0, 0.25); /* Efek bayangan di sisi kanan */
+	border-top: 3px solid rgba(0, 0, 0, 0.25); 
+    border-left: 3px solid rgba(0, 0, 0, 0.25); 
+}
+
+QHeaderView::section {
+    background-color: lightgray; /* Warna latar belakang header kolom */
+    border: 1px solid black; /* Border di sekitar header */
+    color: black; /* Warna teks di header kolom */
+}
+
+QHeaderView::section:first-of-type {
+    background-color: lightgray; /* Warna latar belakang header kolom pertama */
+    color: black; /* Warna teks di header kolom pertama */
+}
+</string>
+           </property>
+           <property name="dragEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_10">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>310</y>
+             <width>131</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:black;</string>
+           </property>
+           <property name="text">
+            <string>Pre Batch-2</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="ml_page">
+          <widget class="QLabel" name="label_7">
+           <property name="geometry">
+            <rect>
+             <x>360</x>
+             <y>300</y>
+             <width>291</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Notification Page</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QWidget" name="setting_page">
+          <widget class="QLabel" name="label_8">
+           <property name="geometry">
+            <rect>
+             <x>340</x>
+             <y>290</y>
+             <width>291</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <italic>true</italic>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Settings Page</string>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>icononly_widget</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>53</x>
+     <y>515</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_13</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>iconname_widget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>229</x>
+     <y>510</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dataset_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>dataset_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>148</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pre_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pre_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ml_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ml_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>54</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>settings_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>settings_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>64</x>
+     <y>338</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dataset_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>dataset_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pre_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pre_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ml_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ml_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>114</x>
+     <y>273</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>55</x>
+     <y>280</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>settings_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>settings_1</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>106</x>
+     <y>326</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>57</x>
+     <y>333</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>logout_1</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>787</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>49</x>
+     <y>882</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>logout_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>800</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>848</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -7,7 +7,7 @@ import os
 from wordcloud import WordCloud, STOPWORDS
 from ui_sentimentanalysis import Ui_MainWindow
 from preprocessing_module import run_preprocessing_cleanning  # Import the preprocessing function
-from preprocessing_module import plot_and_save_label_distribution  # Import the preprocessing function
+from preprocessing_module import plot_sentiment_distribution  # Import the preprocessing function
 
 
 class MyAnalysisSentiment(QMainWindow, Ui_MainWindow):
@@ -94,6 +94,28 @@ class MyAnalysisSentiment(QMainWindow, Ui_MainWindow):
                 QMessageBox.critical(self, "Error", f"Failed to open file: {e}")
 
 
+    # def show_wordcloud(self):
+    #     """Generate and display a WordCloud from the preprocessed data."""
+    #     process_dir = os.path.join(os.getcwd(), 'process')
+    #     os.makedirs(process_dir, exist_ok=True)
+
+    #     file_path = os.path.join(process_dir, 'Hasil-Preprocessing-Data-Steamming.csv')
+    #     df = pd.read_csv(file_path)
+    #     all_words = ' '.join([str(tweet) for tweet in df['result-preprocessing']])
+
+    #     wordcloud = WordCloud(width=800, height=600, background_color='black', colormap='Blues_r', collocations=False, stopwords=STOPWORDS).generate(all_words)
+    #     save_path = os.path.join(process_dir, 'wordcloud.png')
+    #     wordcloud.to_file(save_path)
+    #     print(f"WordCloud saved to {save_path}")
+
+    #      # Tampilkan WordCloud pada QLabel
+    #     pixmap = QPixmap(save_path)
+    #     self.wordcloud_label.setPixmap(pixmap)
+    #     self.wordcloud_label.setScaledContents(True)  # Agar gambar menyesuaikan ukuran label
+    #     # Memanggil fungsi untuk membuat dan menyimpan grafik distribusi label
+    #     plot_sentiment_distribution()
+# your_gui_file.py
+
     def show_wordcloud(self):
         """Generate and display a WordCloud from the preprocessed data."""
         process_dir = os.path.join(os.getcwd(), 'process')
@@ -108,10 +130,22 @@ class MyAnalysisSentiment(QMainWindow, Ui_MainWindow):
         wordcloud.to_file(save_path)
         print(f"WordCloud saved to {save_path}")
 
-         # Tampilkan WordCloud pada QLabel
+        # Tampilkan WordCloud pada QLabel
         pixmap = QPixmap(save_path)
         self.wordcloud_label.setPixmap(pixmap)
         self.wordcloud_label.setScaledContents(True)  # Agar gambar menyesuaikan ukuran label
+
+        # Memanggil fungsi plot_sentiment_distribution untuk menghasilkan dan menyimpan diagram
+        sentiment_file_path = os.path.join(process_dir, 'Hasil-Preprocessing-Data-Steamming.csv')
+        plot_sentiment_distribution(sentiment_file_path)  # Memanggil fungsi plot_sentiment_distribution
+        
+    # Tampilkan diagram distribusi sentimen pada QLabel distsentiment_label
+        sentiment_image_path = os.path.join(process_dir, 'sentiment_distribution.png')  # Path untuk gambar sentiment_distribution.png
+        sentiment_pixmap = QPixmap(sentiment_image_path)
+        self.distsentiment_label.setPixmap(sentiment_pixmap)
+        self.distsentiment_label.setScaledContents(True)  # Agar gambar menyesuaikan ukuran label       # Tampilkan WordCloud pada QLabel
+
+
 
     def update_table_widget(self, df):
         """Update the table widget with data from a DataFrame."""
@@ -162,8 +196,7 @@ class MyAnalysisSentiment(QMainWindow, Ui_MainWindow):
                 # Membaca file hasil preprocessing untuk analisis label
                 df_stemming = pd.read_csv('Process/Hasil-Preprocessing-Data-Steamming.csv')
                 
-                # Memanggil fungsi untuk membuat dan menyimpan grafik distribusi label
-                plot_and_save_label_distribution(df_stemming)
+
                 
                 self.switch_to_preprocessing()
         else:

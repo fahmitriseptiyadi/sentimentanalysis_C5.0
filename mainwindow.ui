@@ -1245,7 +1245,7 @@ QPushButton:hover {
             <bool>true</bool>
            </property>
           </widget>
-          <widget class="QLabel" name="wordcloud_label_2">
+          <widget class="QLabel" name="distsentiment_label">
            <property name="geometry">
             <rect>
              <x>550</x>

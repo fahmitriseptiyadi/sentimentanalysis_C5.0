@@ -122,45 +122,50 @@ def run_preprocessing_cleanning(file_path):
     # df.to_csv(translated_file_path, encoding='utf-8', index=False)
 
     # return translated_file_path
+# Fungsi untuk membuat dan menampilkan diagram batang distribusi label sentimen
 
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
 
-def plot_and_save_label_distribution(df, save_path='Process/label_distribution.png'):
-    """
-    Fungsi untuk menghitung jumlah label positif, negatif, dan netral, 
-    kemudian membuat grafik batang dan menyimpannya di folder Process.
-    
-    Parameters:
-    df (pd.DataFrame): DataFrame yang berisi kolom 'label'.
-    save_path (str): Path untuk menyimpan gambar grafik (default: 'Process/label_distribution.png').
-    """
-    # Hitung jumlah setiap label (positif, negatif, netral)
+# Fungsi untuk membuat dan menampilkan diagram batang distribusi label sentimen
+def plot_sentiment_distribution(file_path):
+    # Membaca data dari CSV
+    df = pd.read_csv(file_path)
+
+    # Memastikan kolom yang tersedia dan memeriksa data
+    print(df.columns)  # Menampilkan nama kolom untuk memastikan ada kolom 'label'
+
+    # Menghitung jumlah label untuk tiap kategori
     label_counts = df['label'].value_counts()
 
-    # Tampilkan hasil jumlah label
-    print("Jumlah label positif, negatif, dan netral:")
-    print(label_counts)
+    # Menentukan urutan yang diinginkan
+    desired_order = ['Positif', 'Negatif', 'Netral']
 
-    # Membuat grafik batang
+    # Menyusun label sesuai urutan yang diinginkan
+    label_counts = label_counts[desired_order]
+
+    # Menampilkan diagram batang
     plt.figure(figsize=(8, 6))
-    sns.barplot(x=label_counts.index, y=label_counts.values, palette='viridis')
+    ax = label_counts.plot(kind='bar', color=['green', 'blue', 'red'])
+    plt.title('Distribusi Label Sentimen')
+    plt.xlabel('Label')
+    plt.ylabel('Jumlah')
+    plt.xticks(rotation=0)  # Mengatur label sumbu x agar tetap horizontal
 
-    # Menambahkan title dan label
-    plt.title('Distribusi Label (Positif, Negatif, Netral)', fontsize=14)
-    plt.xlabel('Label', fontsize=12)
-    plt.ylabel('Jumlah', fontsize=12)
+    # Menambahkan jumlah label di atas batang
+    for i, count in enumerate(label_counts):
+        ax.text(i, count + 0.5, str(count), ha='center', va='bottom', fontsize=12)
 
-    # Menampilkan jumlah pada setiap batang
-    for i, count in enumerate(label_counts.values):
-        plt.text(i, count + 1, str(count), ha='center', fontsize=12)
+    # Menyimpan gambar ke dalam folder 'process'
+    output_folder = 'Process'
+    os.makedirs(output_folder, exist_ok=True)  # Membuat folder jika belum ada
+    output_path = os.path.join(output_folder, 'sentiment_distribution.png')  # Nama file gambar
+    plt.savefig(output_path)  # Menyimpan gambar
+    print(f"Diagram berhasil disimpan di: {output_path}")
+    
+    # Menampilkan gambar
+    # plt.show()
 
-    # Menyimpan grafik ke file
-    os.makedirs('Process', exist_ok=True)
-    plt.savefig(save_path, format='png')
-    plt.close()  # Menutup figure untuk membebaskan memori
-
-    print(f'Grafik label telah disimpan di {save_path}')
-
-# # Contoh pemanggilan fungsi setelah membaca file CSV
-# df = pd.read_csv('Process/Hasil-Preprocessing-Data-Steamming.csv')
-# plot_and_save_label_distribution(df)
-
+# Contoh penggunaan fungsi:
+file_path = 'D:/Project/Python/TA/SentimentAnalysis/process/Hasil-Preprocessing-Data-Steamming.csv'  # Ganti dengan path file yang sesuai

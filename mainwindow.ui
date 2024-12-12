@@ -198,14 +198,17 @@ QLabel:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="dataset_2">
+          <widget class="QPushButton" name="pre_2">
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="text">
-            <string>Dataset</string>
+            <string>Pre-Processing</string>
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/asset/images/dataset_white.png</normaloff>
-             <normalon>:/asset/images/dataset_blue.png</normalon>:/asset/images/dataset_white.png</iconset>
+             <normaloff>:/asset/images/nlp_white.png</normaloff>
+             <normalon>:/asset/images/nlp_blue.png</normalon>:/asset/images/nlp_white.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -222,17 +225,14 @@ QLabel:hover {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pre_2">
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
+          <widget class="QPushButton" name="dataset_2">
            <property name="text">
-            <string>Pre-Processing</string>
+            <string>Dataset</string>
            </property>
            <property name="icon">
             <iconset resource="resources.qrc">
-             <normaloff>:/asset/images/nlp_white.png</normaloff>
-             <normalon>:/asset/images/nlp_blue.png</normalon>:/asset/images/nlp_white.png</iconset>
+             <normaloff>:/asset/images/dataset_white.png</normaloff>
+             <normalon>:/asset/images/dataset_blue.png</normalon>:/asset/images/dataset_white.png</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -934,7 +934,7 @@ QPushButton:hover {
             <string notr="true">color:black;</string>
            </property>
            <property name="text">
-            <string>Pre Batch-1</string>
+            <string>Cleaning</string>
            </property>
           </widget>
           <widget class="QTableWidget" name="pre_table">
@@ -1040,7 +1040,7 @@ QHeaderView::section:first-of-type {
             <string notr="true">color:black;</string>
            </property>
            <property name="text">
-            <string>Pre Batch-2</string>
+            <string>Stemming</string>
            </property>
           </widget>
           <widget class="QPushButton" name="display_res_pre_batch1">
@@ -1261,13 +1261,34 @@ QPushButton:hover {
             <bool>true</bool>
            </property>
           </widget>
+          <widget class="QLabel" name="label_analysis">
+           <property name="geometry">
+            <rect>
+             <x>950</x>
+             <y>630</y>
+             <width>191</width>
+             <height>121</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:black;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="ml_page">
           <widget class="QLabel" name="label_7">
            <property name="geometry">
             <rect>
-             <x>360</x>
-             <y>300</y>
+             <x>10</x>
+             <y>10</y>
              <width>291</width>
              <height>41</height>
             </rect>
@@ -1280,8 +1301,11 @@ QPushButton:hover {
              <bold>true</bold>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color:black;</string>
+           </property>
            <property name="text">
-            <string>Notification Page</string>
+            <string>HASIL PENELITIAN</string>
            </property>
           </widget>
          </widget>
